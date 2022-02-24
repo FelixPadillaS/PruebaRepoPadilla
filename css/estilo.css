@@ -1,8 +1,240 @@
 body { 
     font-family: Arial, Verdana, Helvetica; 
-    background-color: rgb(233, 228, 205);
+    color: black;
+    overflow: auto;
 }
 
+nav{
+    text-align: center;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    }
+
+a:visited {
+    color: black;
+    text-decoration: none;
+    }
+
+/* Pantallas chicas celulares */
+@media only screen and (max-width: 600px){
+    body {
+        background-color: rgb(233, 228, 205);
+    }
+
+    #padreGrid {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto auto auto auto auto auto auto;
+        
+        grid-template-areas: "01main"
+                             "02nav"
+                             "03area1"
+                             "04area2"
+                             "05area3"
+                             "06area4"
+                             "07footer"
+                             "08footercenter";
+    }
+
+    #main {
+        background: linear-gradient(1deg, rgb(194, 178, 110), rgb(233, 228, 205));
+        color: rgb(0, 0, 0);  
+        grid-area: 01main;
+        padding-inline: 5px;
+    }
+    
+    #hijoNav {
+        background-color: rgb(233, 228, 205);
+        grid-area: 02nav;
+        padding-inline: 5px;
+        text-align: center;
+    }  
+
+    #hijo01 {
+        background: linear-gradient(1deg, rgb(233, 228, 205), rgb(194, 178, 110));
+        /* color: white; */
+        grid-area: 03area1;
+        padding-inline: 5px;
+        text-align: center;
+    }
+
+    #hijo02 {
+        background: linear-gradient(1deg, rgb(194, 178, 110), rgb(233, 228, 205));
+        grid-area: 04area2;
+        /* color: white; */
+        padding-inline: 5px;
+        text-align: center;
+    }
+
+    #hijo03 {
+        background: linear-gradient(1deg, rgb(233, 228, 205), rgb(194, 178, 110));
+        /* color: white; */
+        grid-area: 05area3;
+        padding-inline: 5px;
+        text-align: center;
+    }
+
+    #hijo04 {
+        background: linear-gradient(1deg, rgb(194, 178, 110), rgb(233, 228, 205));
+        grid-area: 06area4;
+        /* color: white; */
+        padding-inline: 5px;
+        text-align: center;
+    }
+
+    #footer {
+    text-align: center;
+    grid-area: 07footer;
+    }
+
+    #footercenter {
+    text-align: center;
+    grid-area: 08footercenter;
+    background-color: rgb(194, 178, 110);
+    }
+}
+
+/* Pantallas medianas tabletas*/
+@media only screen and (min-width: 600px){
+    body {
+        background-color: lightblue;
+    }
+    #padreGrid {
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        grid-template-rows: auto auto auto auto auto auto auto;
+        padding-left: 5;
+        
+        /* height: 600px;*/
+        background-color: rgb(221, 233, 208);
+        grid-template-areas:"area1 area1"
+                            "area2 area3"
+                            "area2 area4"
+                            "area2 area5"
+                            "area2 area6"
+                            "area7 area7"
+                            "area8 area8";
+    }
+
+    #main {
+        background-color: lightblue;
+        grid-area: area1;
+        padding-inline: 5px;
+    }
+
+    #hijoNav {
+        background: linear-gradient(1deg, white, lightblue);
+        grid-area: area2;
+        padding-inline: 5px;
+        /*text-align: center;*/
+    }
+
+    #hijo01 {
+        background: linear-gradient(1deg, white, lightblue);
+        grid-area: area3;
+        padding-inline: 5px;
+        text-align: center;
+    } 
+
+    #hijo02 {
+        background: linear-gradient(1deg, lightblue, white);
+        grid-area: area4;
+        padding-inline: 5px;
+        text-align: center;
+    } 
+    #hijo03 {
+        background: linear-gradient(1deg, white, lightblue);
+        grid-area: area5;
+        padding-inline: 5px;
+        text-align: center;
+    } 
+
+    #hijo04 {
+        background: linear-gradient(1deg, lightblue, white);
+        grid-area: area6;
+        padding-inline: 5px;
+        text-align: center;
+    } 
+
+    #footer {
+        text-align: center;
+        background-color: white;
+        grid-area: area7;
+        }
+    
+        #footercenter {
+        text-align: center;
+        grid-area: area8;
+        }
+}
+
+@media only screen and (min-width: 992px){
+    #padreGrid {
+        display: grid;
+        grid-template-columns: 150px 1fr 1fr;
+        grid-template-rows: auto auto auto auto auto;
+        
+        background-color: white;
+        grid-template-areas:"area1 area1 area1"
+                            "area2 area3 area4"
+                            "area2 area5 area6"
+                            "area7 area7 area7"
+                            "area8 area8 area8";
+    }
+    #hijo01 {
+        background: linear-gradient(1deg, white, lightblue);
+        grid-area: area3;
+        padding-inline: 5px;
+        text-align: center;
+    } 
+
+    #hijo02 {
+        background: linear-gradient(1deg, white, lightblue);
+        grid-area: area4;
+        padding-inline: 5px;
+        text-align: center;
+    } 
+    #hijo03 {
+        background: linear-gradient(1deg, lightblue, white);
+        grid-area: area5;
+        padding-inline: 5px;
+        text-align: center;
+    } 
+
+    #hijo04 {
+        background: linear-gradient(1deg, lightblue, white);
+        grid-area: area6;
+        padding-inline: 5px;
+        text-align: center;
+    } 
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 nav {
     width: fit-content;
     position: -webkit-sticky;
@@ -32,3 +264,5 @@ nav {
 #formacontacto {
     text-align: center;
 }
+
+*/
